@@ -24,7 +24,7 @@
   <link rel="icon" type="image/png" href="../assets/img/favicon.png">
   <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
   <title>
-    Podcast | A braccetto con la Storia
+    Articoli | A braccetto con la Storia
   </title>
   <meta content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0, shrink-to-fit=no' name='viewport' />
   <!--     Fonts and icons     -->
@@ -57,13 +57,13 @@
       <div class="collapse navbar-collapse justify-content-end" id="navigation" data-nav-image="./assets/img/blurred-image-1.jpg">
         <ul class="navbar-nav">
           <li class="nav-item">
-            <a class="nav-link" href="../articoli">
+            <a class="nav-link" href="javascript:void(0)" onclick="scrollToDownload()">
               <i class="now-ui-icons education_paper"></i>
               <p>Articoli</p>
             </a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="#">
+            <a class="nav-link" href="javascript:void(0)" onclick="scrollToDownload()">
               <i class="now-ui-icons tech_headphones"></i>
               <p>Podcast</p>
             </a>
@@ -129,62 +129,20 @@
       </div>
       <div class="content-center">
         <div class="container">
-          <h1 class="title">Podcast</h1>
+          <h1 class="title">Articoli</h1>
           <div class="text-center">
-            <a href="#ultimi-episodi" class="btn btn-primary btn-round">
-              Ultimi episodi
+            <a href="#articoli" class="btn btn-primary btn-round">
+              Tutti gli articoli
             </a>
-            <a href="#stagioni" class="btn btn-primary btn-round">
-              Stagioni complete
+            <a href="#categorie" class="btn btn-primary btn-round">
+              Categorie
             </a>
           </div>
         </div>
       </div>
     </div>
-    <div class="section section-about-us">
-        <div class="container">
-            <div class="row">
-                <div class="col-md-8 ml-auto mr-auto text-center">
-                    <h2 class="title">Perchè un podcast?</h2>
-                    <h5 class="description">
-                        Perchè ovunque tu sia, qualunque dispositivo tu abbia, non devi rinunciare alla curiosità!<br>
-                        Abbiamo pensato al nostro podcast come a delle pillole di storia, con curiosità, aneddoti e testimonianze.
-                    </h5>
-                </div>
-            </div>
-            <div class="separator separator-primary"></div>
-        </div>
-    </div>
-    <div style="height: 0.1rem"></div>
-    <section id="podcast">
-        <h4 style="text-align: center;">Non dimenticarti di seguirci sulle altre piattaforme</h4>
-        <div class="podcast">
-          <div class="box">
-            <div class="boxContent">
-              <i class="fa fa-spotify icon"></i>
-              <h1 class="title">Spotify</h1>
-            </div>
-            <a href="#"></a>
-          </div>
-          <div class="box">
-            <div class="boxContent">
-              <i class="fa fa-google icon"></i>
-              <h1 class="title">Google Podcast</h1>
-            </div>
-            <a href="#"></a>
-          </div>
-          <div class="box">
-            <div class="boxContent">
-              <i class="fa fa-podcast icon"></i>
-              <h1 class="title">Apple Podcast</h1>
-            </div>
-            <a href="#"></a>
-          </div>
-        </div>
-    </section>
-    <div style="height: 3rem"></div>
-    <section id="ultimi-episodi">
-      <h2 class="title">Ultimi episodi</h2>
+    <section id="articoli">
+      <h2 class="title">Tutti gli articoli</h2>
       <div class="container">
         <div class="row">
           <div class="col">
@@ -196,11 +154,10 @@
                 </div>
                 <!-- Post Content-->
                 <div class="post-content">
-                  <div class="category">Episodio 1 - S4</div>
-                  <h1 class="title">Il piano che va piano</h1>
+                  <div class="category">Accadde oggi</div>
+                  <h1 class="title">Articolo articolante</h1>
                   <h2 class="sub_title" style="text-align: center; font-size: 15px;">
-                    <i class="fas fa-microphone"></i> Andrea Musmarra<br>
-                    <i class="fas fa-pen-alt"></i> Miguel Montefusco
+                    <i class="fas fa-pen-alt"></i> Renata Altobelli
                   </h2>
                   <p class="description">New York, the largest city in the U.S., is an architectural marvel with plenty of historic monuments, magnificent buildings and countless dazzling skyscrapers.</p>
                   <div class="post-meta">
@@ -212,86 +169,100 @@
               </div>
           </div>
           <div class="col">
-              <!-- Post-->
-              <div class="post-module">
-                <!-- Thumbnail-->
-                <div class="thumbnail">
-                  <img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/169963/photo-1429043794791-eb8f26f44081.jpeg"/>
-                </div>
-                <!-- Post Content-->
-                <div class="post-content">
-                  <div class="category">Episodio 1 - S4</div>
-                  <h1 class="title">Il piano che va piano</h1>
-                  <h2 class="sub_title" style="text-align: center; font-size: 15px;">
-                    <i class="fas fa-microphone"></i> Andrea Musmarra<br>
-                    <i class="fas fa-pen-alt"></i> Miguel Montefusco
-                  </h2>
-                  <p class="description">New York, the largest city in the U.S., is an architectural marvel with plenty of historic monuments, magnificent buildings and countless dazzling skyscrapers.</p>
-                  <div class="post-meta">
-                    <span class="timestamp">
-                      <i class="far fa-calendar-alt"></i> 20/07/2021
-                    </span>
-                  </div>
+            <!-- Post-->
+            <div class="post-module">
+              <!-- Thumbnail-->
+              <div class="thumbnail">
+                <img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/169963/photo-1429043794791-eb8f26f44081.jpeg"/>
+              </div>
+              <!-- Post Content-->
+              <div class="post-content">
+                <div class="category">Accadde oggi</div>
+                <h1 class="title">Articolo articolante</h1>
+                <h2 class="sub_title" style="text-align: center; font-size: 15px;">
+                  <i class="fas fa-pen-alt"></i> Renata Altobelli
+                </h2>
+                <p class="description">New York, the largest city in the U.S., is an architectural marvel with plenty of historic monuments, magnificent buildings and countless dazzling skyscrapers.</p>
+                <div class="post-meta">
+                  <span class="timestamp">
+                    <i class="far fa-calendar-alt"></i> 20/07/2021
+                  </span>
                 </div>
               </div>
-          </div>
+            </div>
+        </div>
         </div>
         <div class="row"></div>
         <div class="row">
-          <div class="col">
-              <!-- Post-->
-              <div class="post-module">
-                <!-- Thumbnail-->
-                <div class="thumbnail">
-                  <img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/169963/photo-1429043794791-eb8f26f44081.jpeg"/>
-                </div>
-                <!-- Post Content-->
-                <div class="post-content">
-                  <div class="category">Episodio 1 - S4</div>
-                  <h1 class="title">Il piano che va piano</h1>
-                  <h2 class="sub_title" style="text-align: center; font-size: 15px;">
-                    <i class="fas fa-microphone"></i> Andrea Musmarra<br>
-                    <i class="fas fa-pen-alt"></i> Miguel Montefusco
-                  </h2>
-                  <p class="description">New York, the largest city in the U.S., is an architectural marvel with plenty of historic monuments, magnificent buildings and countless dazzling skyscrapers.</p>
-                  <div class="post-meta">
-                    <span class="timestamp">
-                      <i class="far fa-calendar-alt"></i> 20/07/2021
-                    </span>
+            <div class="col">
+                <!-- Post-->
+                <div class="post-module">
+                  <!-- Thumbnail-->
+                  <div class="thumbnail">
+                    <img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/169963/photo-1429043794791-eb8f26f44081.jpeg"/>
+                  </div>
+                  <!-- Post Content-->
+                  <div class="post-content">
+                    <div class="category">Accadde oggi</div>
+                    <h1 class="title">Articolo articolante</h1>
+                    <h2 class="sub_title" style="text-align: center; font-size: 15px;">
+                      <i class="fas fa-pen-alt"></i> Renata Altobelli
+                    </h2>
+                    <p class="description">New York, the largest city in the U.S., is an architectural marvel with plenty of historic monuments, magnificent buildings and countless dazzling skyscrapers.</p>
+                    <div class="post-meta">
+                      <span class="timestamp">
+                        <i class="far fa-calendar-alt"></i> 20/07/2021
+                      </span>
+                    </div>
                   </div>
                 </div>
-              </div>
-          </div>
-          <div class="col">
-              <!-- Post-->
-              <div class="post-module">
-                <!-- Thumbnail-->
-                <div class="thumbnail">
-                  <img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/169963/photo-1429043794791-eb8f26f44081.jpeg"/>
-                </div>
-                <!-- Post Content-->
-                <div class="post-content">
-                  <div class="category">Episodio 1 - S4</div>
-                  <h1 class="title">Il piano che va piano</h1>
-                  <h2 class="sub_title" style="text-align: center; font-size: 15px;">
-                    <i class="fas fa-microphone"></i> Andrea Musmarra<br>
-                    <i class="fas fa-pen-alt"></i> Miguel Montefusco
-                  </h2>
-                  <p class="description">New York, the largest city in the U.S., is an architectural marvel with plenty of historic monuments, magnificent buildings and countless dazzling skyscrapers.</p>
-                  <div class="post-meta">
-                    <span class="timestamp">
-                      <i class="far fa-calendar-alt"></i> 20/07/2021
-                    </span>
+            </div>
+            <div class="col">
+                <!-- Post-->
+                <div class="post-module">
+                  <!-- Thumbnail-->
+                  <div class="thumbnail">
+                    <img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/169963/photo-1429043794791-eb8f26f44081.jpeg"/>
+                  </div>
+                  <!-- Post Content-->
+                  <div class="post-content">
+                    <div class="category">Accadde oggi</div>
+                    <h1 class="title">Articolo articolante</h1>
+                    <h2 class="sub_title" style="text-align: center; font-size: 15px;">
+                      <i class="fas fa-pen-alt"></i> Renata Altobelli
+                    </h2>
+                    <p class="description">New York, the largest city in the U.S., is an architectural marvel with plenty of historic monuments, magnificent buildings and countless dazzling skyscrapers.</p>
+                    <div class="post-meta">
+                      <span class="timestamp">
+                        <i class="far fa-calendar-alt"></i> 20/07/2021
+                      </span>
+                    </div>
                   </div>
                 </div>
-              </div>
-          </div>
+            </div>
         </div>
       </div>
+      <nav aria-label="Page navigation example" style="margin-top: 1%">
+        <ul class="pagination">
+          <li class="page-item">
+            <a class="page-link" href="#" aria-label="Previous">
+              <span aria-hidden="true">&laquo;</span>
+            </a>
+          </li>
+          <li class="page-item"><a class="page-link" href="#">1</a></li>
+          <li class="page-item"><a class="page-link" href="#">2</a></li>
+          <li class="page-item"><a class="page-link" href="#">3</a></li>
+          <li class="page-item">
+            <a class="page-link" href="#" aria-label="Next">
+              <span aria-hidden="true">&raquo;</span>
+            </a>
+          </li>
+        </ul>
+      </nav>
     </section>
     <div style="height: 3rem"></div>
-    <section id="stagioni">
-      <h2 class="title">Tutte le stagioni</h2>
+    <section id="categorie">
+      <h2 class="title">Categorie</h2>
       <button type="button" class="collapsible">Stagione 1</button>
       <div class="content">
         <p>
