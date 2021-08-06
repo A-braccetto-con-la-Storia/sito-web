@@ -10,7 +10,7 @@ Coded by Creative Tim
 =========================================================
 The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software. -->
 <!DOCTYPE html>
-<html lang="en">
+<html lang="it">
 
 <head>
   <meta charset="utf-8" />
@@ -181,7 +181,7 @@ The above copyright notice and this permission notice shall be included in all c
                         <td>Fondatore</td>
                         <td>0</td>
                         <td>0</td>
-                        <td class="td-actions text-right">
+                        <td class="td-actions">
                             <button type="button" rel="tooltip" title="Modifica" class="btn btn-primary btn-link btn-sm">
                                 <i class="material-icons">edit</i>
                             </button>
