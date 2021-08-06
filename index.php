@@ -66,7 +66,7 @@
         <div class="container">
           <h3 class="title">Inchiostro fresco per te</h3>
           <hr>
-          <p style="text-align: center;">Visualizza tutti gli articoli</p>
+          <p style="text-align: center;"><a href="./articoli/">Visualizza tutti gli articoli</a></p>
           <div style="height: 10%;"></div>
           <div class="container">
             <div class="row">

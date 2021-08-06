@@ -1,2 +1,4 @@
 *.drawio
 *.json
+.DS_Store
+build/*.php
