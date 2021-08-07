@@ -28,6 +28,7 @@ The above copyright notice and this permission notice shall be included in all c
   <link href="assets/css/material-dashboard.css?v=2.1.2" rel="stylesheet" />
   <!-- CSS Just for demo purpose, don't include it in your project -->
   <link href="assets/demo/demo.css" rel="stylesheet" />
+  <link rel="stylesheet" href="https://unpkg.com/bootstrap-table@1.18.3/dist/bootstrap-table.min.css">
 </head>
 
 <body class="">
@@ -215,6 +216,40 @@ The above copyright notice and this permission notice shall be included in all c
                 <div class="card-footer">
                   <div class="stats">
                     <i class="material-icons">open_in_new</i> Vedi lista completa
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-lg-3 col-md-6 col-sm-6">
+              <div class="card card-stats">
+                <div class="card-header card-header-danger card-header-icon">
+                  <div class="card-icon">
+                    <i class="material-icons">report_problem</i>
+                  </div>
+                  <p class="card-category">Utenti con warn</p>
+                  <h3 class="card-title">0</h3>
+                </div>
+                <div class="card-footer">
+                  <div class="stats">
+                    <i class="material-icons">open_in_new</i> Vedi lista utenti
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="col-lg-3 col-md-6 col-sm-6">
+              <div class="card card-stats">
+                <div class="card-header card-header-danger card-header-icon">
+                  <div class="card-icon">
+                    <i class="material-icons">cancel</i>
+                  </div>
+                  <p class="card-category">Utenti bannati</p>
+                  <h3 class="card-title">0</h3>
+                </div>
+                <div class="card-footer">
+                  <div class="stats">
+                    <i class="material-icons">open_in_new</i> Vedi lista utenti
                   </div>
                 </div>
               </div>
@@ -524,13 +559,28 @@ The above copyright notice and this permission notice shall be included in all c
                   <p class="card-category">Ultimo aggiornamento: <? echo date("d/m/Y h:i:s");?></p>
                 </div>
                 <div class="card-body table-responsive">
-                  <table class="table table-hover">
-                    <thead class="text-warning">
-                      <th>Data</th>
-                      <th>Azione</th>
+                <table 
+                    data-toggle="table"
+                    data-pagination="true"
+                    data-search="true"
+                    data-show-columns="true"
+                    data-show-refresh="true"
+                    data-show-columns-toggle-all="true"
+                    data-show-pagination-switch="true"
+                    data-show-toggle="true"
+                    data-show-fullscreen="true"
+                    data-buttons="buttons"
+                    >
+                    <thead>
+                      <tr>
+                        <th data-sortable="true" data-field="id">Data</th>
+                        <th data-sortable="true" data-field="role">Codice</th>
+                        <th data-sortable="true" data-field="flag">Descrizione</th>
+                      </tr>
                     </thead>
                     <tbody>
                       <tr>
+                        <td>-</td>
                         <td>-</td>
                         <td>-</td>
                       </tr>
@@ -620,8 +670,7 @@ The above copyright notice and this permission notice shall be included in all c
   <script src="assets/js/plugins/bootstrap-notify.js"></script>
   <!-- Control Center for Material Dashboard: parallax effects, scripts for the example pages etc -->
   <script src="assets/js/material-dashboard.js?v=2.1.2" type="text/javascript"></script>
-  <!-- Material Dashboard DEMO methods, don't include it in your project! -->
-  <script src="assets/demo/demo.js"></script>
+  <script src="https://unpkg.com/bootstrap-table@1.18.3/dist/bootstrap-table.min.js"></script>
   <script>
     $(document).ready(function() {
       $().ready(function() {
