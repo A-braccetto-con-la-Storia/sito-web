@@ -18,7 +18,7 @@ The above copyright notice and this permission notice shall be included in all c
   <link rel="icon" type="image/png" href="../assets/img/favicon.png">
   <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
   <title>
-    Lista podcast | A braccetto con la Storia
+    Lista quiz | A braccetto con la Storia
   </title>
   <meta content='width=device-width, initial-scale=1.0, shrink-to-fit=no' name='viewport' />
   <!--     Fonts and icons     -->
@@ -35,14 +35,14 @@ The above copyright notice and this permission notice shall be included in all c
   <div class="wrapper ">
     <? 
       require_once '../templates/templates.php';
-      echo getNavbar('podcast');
+      echo getNavbar('quiz');
     ?>
     <div class="main-panel">
       <!-- Navbar -->
       <nav class="navbar navbar-expand-lg navbar-transparent navbar-absolute fixed-top ">
         <div class="container-fluid">
           <div class="navbar-wrapper">
-            <a class="navbar-brand" href="javascript:;">Lista episodi e stagioni Podcast</a>
+            <a class="navbar-brand" href="javascript:;">Lista articoli</a>
           </div>
           <div class="collapse navbar-collapse justify-content-end">
             <ul class="navbar-nav">
@@ -85,8 +85,8 @@ The above copyright notice and this permission notice shall be included in all c
         <div class="container-fluid">
           <div class="row">
               <div class="col">
-                <button class="btn btn-danger btn-round" onclick="location.href='./nuovo-episodio.php'">
-                    <i class="material-icons">add_circle_outline</i> Nuovo episodio
+                <button class="btn btn-danger btn-round">
+                    <i class="material-icons">add_circle_outline</i> Nuovo quiz
                 </button>
               </div>
           </div>
@@ -96,7 +96,7 @@ The above copyright notice and this permission notice shall be included in all c
                 <div class="card-header card-header-warning">
                   <div class="row">
                     <div class="col">
-                      <h4 class="card-title">Lista episodi</h4>
+                      <h4 class="card-title">Lista quiz</h4>
                       <p class="card-category">Ultimo aggiornamento: <? echo date("d/m/Y h:i:s");?></p>
                     </div>
                   </div>
@@ -131,67 +131,6 @@ The above copyright notice and this permission notice shall be included in all c
                         <td class="td-actions">
                             <button type="button" rel="tooltip" title="Modifica" class="btn btn-primary btn-link btn-sm">
                                 <i class="material-icons">edit</i>
-                            </button>
-                            <button type="button" rel="tooltip" title="Rimuovi" class="btn btn-danger btn-link btn-sm">
-                                <i class="material-icons">delete</i>
-                            </button>
-                        </td>
-                      </tr>
-                    </tbody>
-                  </table>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-        <div class="container-fluid">
-          <div class="row">
-              <div class="col">
-                <button class="btn btn-danger btn-round">
-                    <i class="material-icons">add_circle_outline</i> Nuova stagione
-                </button>
-              </div>
-          </div>
-          <div class="row">
-            <div class="col">
-              <div class="card">
-                <div class="card-header card-header-warning">
-                  <div class="row">
-                    <div class="col">
-                      <h4 class="card-title">Lista stagioni</h4>
-                      <p class="card-category">Ultimo aggiornamento: <? echo date("d/m/Y h:i:s");?></p>
-                    </div>
-                  </div>
-                </div>
-                <div class="card-body table-responsive">
-                <table 
-                    data-toggle="table"
-                    data-pagination="true"
-                    data-search="true"
-                    data-show-columns="true"
-                    data-show-refresh="true"
-                    data-show-columns-toggle-all="true"
-                    data-show-pagination-switch="true"
-                    data-show-toggle="true"
-                    data-show-fullscreen="true"
-                    >
-                    <thead>
-                      <tr>
-                        <th data-sortable="true" data-field="id">ID</th>
-                        <th data-sortable="true" data-field="role">Titolo</th>
-                        <th>Azioni</th>
-                      </tr>
-                    </thead>
-                    <tbody>
-                      <tr>
-                        <td>1</td>
-                        <td>Item 1</td>
-                        <td class="td-actions">
-                            <button type="button" rel="tooltip" title="Modifica" class="btn btn-primary btn-link btn-sm">
-                                <i class="material-icons">edit</i>
-                            </button>
-                            <button type="button" rel="tooltip" title="Impostazioni" class="btn btn-primary btn-link btn-sm">
-                                <i class="material-icons">settings</i>
                             </button>
                             <button type="button" rel="tooltip" title="Rimuovi" class="btn btn-danger btn-link btn-sm">
                                 <i class="material-icons">delete</i>

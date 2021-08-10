@@ -95,6 +95,13 @@ The above copyright notice and this permission notice shall be included in all c
       <!-- End Navbar -->
       <div class="content">
         <div class="container-fluid">
+         <div class="row">
+              <div class="col">
+                <button class="btn btn-danger btn-round" onclick="location.href = './nuovo-utente.php'">
+                    <i class="material-icons">add_circle_outline</i> Nuovo utente
+                </button>
+              </div>
+          </div>
           <div class="row">
             <div class="col">
               <div class="card">
@@ -117,28 +124,34 @@ The above copyright notice and this permission notice shall be included in all c
                     data-show-pagination-switch="true"
                     data-show-toggle="true"
                     data-show-fullscreen="true"
-                    data-buttons="buttons"
                     >
                     <thead>
                       <tr>
                         <th data-sortable="true" data-field="id">ID</th>
+                        <th data-sortable="true" data-field="username">Username</th>
                         <th data-sortable="true" data-field="role">Ruolo</th>
                         <th data-sortable="true" data-field="flag">Flag</th>
                         <th data-sortable="true" data-field="points">Punti</th>
-                        <th data-sortable="true" data-field="points">Warns</th>
+                        <th data-sortable="true" data-field="warns">Warns</th>
+                        <th data-sortable="true" data-field="status">Status</th>
                         <th>Azioni</th>
                       </tr>
                     </thead>
                     <tbody>
                       <tr>
-                        <td>1</td>
-                        <td>Item 1</td>
-                        <td>$1</td>
-                        <td>$1</td>
-                        <td>$2</td>
+                        <td>134723339</td>
+                        <td>MrDeiv</td>
+                        <td>Fondatore</td>
+                        <td>0</td>
+                        <td>0</td>
+                        <td>0/3</td>
+                        <td>ATTIVO</td>
                         <td class="td-actions">
                             <button type="button" rel="tooltip" title="Modifica" class="btn btn-primary btn-link btn-sm">
                                 <i class="material-icons">edit</i>
+                            </button>
+                            <button type="button" rel="tooltip" title="Visualizza" class="btn btn-danger btn-link btn-sm">
+                                <i class="material-icons">info</i>
                             </button>
                             <button type="button" rel="tooltip" title="Sanziona" class="btn btn-primary btn-link btn-sm">
                                 <i class="material-icons">report_problem</i>
@@ -447,23 +460,6 @@ The above copyright notice and this permission notice shall be included in all c
       md.initDashboardPageCharts();
 
     });
-  </script>
-
-  <script>
-    function buttons () {
-      return {
-        btnAdd: {
-          text: 'Aggiungi utente',
-          icon: 'fa-plus',
-          event: function () {
-            $('#nuovo-utente').modal('toggle')
-          },
-          attributes: {
-            title: 'Aggiungi un nuovo utente alla tabella'
-          }
-        }
-      }
-    }
   </script>
 </body>
 

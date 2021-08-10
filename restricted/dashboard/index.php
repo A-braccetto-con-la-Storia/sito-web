@@ -60,49 +60,49 @@ The above copyright notice and this permission notice shall be included in all c
             </a>
           </li>
           <li class="nav-item ">
-            <a class="nav-link" href="./tables.html">
+            <a class="nav-link" href="./articoli/">
               <i class="material-icons">feed</i>
               <p>Articoli</p>
             </a>
           </li>
           <li class="nav-item ">
-            <a class="nav-link" href="./typography.html">
+            <a class="nav-link" href="./podcast/">
               <i class="material-icons">mic</i>
               <p>Podcast</p>
             </a>
           </li>
           <li class="nav-item ">
-            <a class="nav-link" href="./icons.html">
+            <a class="nav-link" href="./newsletter/">
               <i class="material-icons">email</i>
               <p>Newsletter</p>
             </a>
           </li>
           <li class="nav-item ">
-            <a class="nav-link" href="./map.html">
+            <a class="nav-link" href="./eventi/">
               <i class="material-icons">event</i>
               <p>Eventi</p>
             </a>
           </li>
           <li class="nav-item ">
-            <a class="nav-link" href="./map.html">
+            <a class="nav-link" href="./quiz/">
               <i class="material-icons">quiz</i>
               <p>Quiz</p>
             </a>
           </li>
           <li class="nav-item ">
-            <a class="nav-link" href="./notifications.html">
+            <a class="nav-link" href="./sponsor/">
               <i class="material-icons">groups</i>
               <p>Sponsor</p>
             </a>
           </li>
           <li class="nav-item ">
-            <a class="nav-link" href="./rtl.html">
+            <a class="nav-link" href="./cpanel/">
               <i class="material-icons">settings</i>
               <p>Pannello di controllo</p>
             </a>
           </li>
           <li class="nav-item active-pro ">
-            <a class="nav-link" href="./upgrade.html">
+            <a class="nav-link" href="../../">
               <i class="material-icons">home</i>
               <p>Torna alla Home</p>
             </a>

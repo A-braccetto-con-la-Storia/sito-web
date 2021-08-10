@@ -18,7 +18,7 @@ The above copyright notice and this permission notice shall be included in all c
   <link rel="icon" type="image/png" href="../assets/img/favicon.png">
   <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
   <title>
-    Lista podcast | A braccetto con la Storia
+    Nuovo episodio | A braccetto con la Storia
   </title>
   <meta content='width=device-width, initial-scale=1.0, shrink-to-fit=no' name='viewport' />
   <!--     Fonts and icons     -->
@@ -26,8 +26,7 @@ The above copyright notice and this permission notice shall be included in all c
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/latest/css/font-awesome.min.css">
   <!-- CSS Files -->
   <link href="../assets/css/material-dashboard.css?v=2.1.2" rel="stylesheet" />
-  <!-- CSS Just for demo purpose, don't include it in your project -->
-  <link href="../assets/demo/demo.css" rel="stylesheet" />
+  <link href="../assets/css/modal.css" rel="stylesheet" />
   <link rel="stylesheet" href="https://unpkg.com/bootstrap-table@1.18.3/dist/bootstrap-table.min.css">
 </head>
 
@@ -42,7 +41,7 @@ The above copyright notice and this permission notice shall be included in all c
       <nav class="navbar navbar-expand-lg navbar-transparent navbar-absolute fixed-top ">
         <div class="container-fluid">
           <div class="navbar-wrapper">
-            <a class="navbar-brand" href="javascript:;">Lista episodi e stagioni Podcast</a>
+            <a class="navbar-brand" href="javascript:;">Nuovo episodio</a>
           </div>
           <div class="collapse navbar-collapse justify-content-end">
             <ul class="navbar-nav">
@@ -81,131 +80,158 @@ The above copyright notice and this permission notice shall be included in all c
         </div>
       </nav>
       <!-- End Navbar -->
-      <div class="content">
-        <div class="container-fluid">
-          <div class="row">
-              <div class="col">
-                <button class="btn btn-danger btn-round" onclick="location.href='./nuovo-episodio.php'">
-                    <i class="material-icons">add_circle_outline</i> Nuovo episodio
-                </button>
-              </div>
-          </div>
-          <div class="row">
-            <div class="col">
-              <div class="card">
-                <div class="card-header card-header-warning">
-                  <div class="row">
-                    <div class="col">
-                      <h4 class="card-title">Lista episodi</h4>
-                      <p class="card-category">Ultimo aggiornamento: <? echo date("d/m/Y h:i:s");?></p>
+        <div class="content">
+            <form action="manage_new_episode.php" method="POST" enctype="multipart/form-data">
+                <div class="container-fluid">
+                    <!-- Titolo episodio -->
+                    <div class="row">
+                        <div class="col">
+                        <div class="card">
+                            <div class="card-header card-header-warning">
+                            <div class="row">
+                                <div class="col">
+                                <h4 class="card-title">Titolo episodio</h4>
+                                </div>
+                            </div>
+                            </div>
+                            <div class="card-body table-responsive">
+                                <div class="input-group mb-3">
+                                    <input type="text" name="ep_title" class="form-control" id="episode-title" required>
+                                    <label for="episode-title">0/255</label>
+                                </div>
+                            </div>
+                        </div>
+                        </div>
                     </div>
-                  </div>
                 </div>
-                <div class="card-body table-responsive">
-                <table 
-                    data-toggle="table"
-                    data-pagination="true"
-                    data-search="true"
-                    data-show-columns="true"
-                    data-show-refresh="true"
-                    data-show-columns-toggle-all="true"
-                    data-show-pagination-switch="true"
-                    data-show-toggle="true"
-                    data-show-fullscreen="true"
-                    >
-                    <thead>
-                      <tr>
-                        <th data-sortable="true" data-field="id">ID</th>
-                        <th data-sortable="true" data-field="role">Titolo</th>
-                        <th data-sortable="true" data-field="role">Stagione/i</th>
-                        <th data-sortable="true" data-field="flag">Data</th>
-                        <th>Azioni</th>
-                      </tr>
-                    </thead>
-                    <tbody>
-                      <tr>
-                        <td>1</td>
-                        <td>Item 1</td>
-                        <td>$1</td>
-                        <td>$1</td>
-                        <td class="td-actions">
-                            <button type="button" rel="tooltip" title="Modifica" class="btn btn-primary btn-link btn-sm">
-                                <i class="material-icons">edit</i>
-                            </button>
-                            <button type="button" rel="tooltip" title="Rimuovi" class="btn btn-danger btn-link btn-sm">
-                                <i class="material-icons">delete</i>
-                            </button>
-                        </td>
-                      </tr>
-                    </tbody>
-                  </table>
+                <div class="container-fluid">
+                    <!-- Descrizione episodio -->
+                    <div class="row">
+                        <div class="col">
+                        <div class="card">
+                            <div class="card-header card-header-warning">
+                            <div class="row">
+                                <div class="col">
+                                    <h4 class="card-title">Descrizione dell'episodio</h4>
+                                </div>
+                            </div>
+                            </div>
+                            <div class="card-body table-responsive">
+                                <div class="input-group mb-3">
+                                    <textarea id="episode-description" name="ep_description" style="width: 100%;" rows="20" required></textarea>
+                                    <label for="episode-description">0/255</label>
+                                </div>
+                            </div>
+                        </div>
+                        </div>
+                    </div>
                 </div>
-              </div>
-            </div>
-          </div>
+                <div class="container-fluid">
+                <!-- Stagione episodio -->
+                    <div class="row">
+                        <div class="col">
+                        <div class="card">
+                            <div class="card-header card-header-warning">
+                                <div class="row">
+                                    <div class="col">
+                                        <h4 class="card-title">Stagione dell'episodio</h4>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="card-body table-responsive">
+                                <select class="form-select form-select-lg mb-3" aria-label=".form-select-lg example" style="width: 100%; font-size: 20px;" name="ep_season">
+                                    <option value="1" selected>Stagione 4</option>
+                                    <option value="2">Stagione 3</option>
+                                    <option value="3">Three</option>
+                                </select>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="container-fluid">
+                <!-- Speakers e autori episodio -->
+                    <div class="row">
+                        <div class="col">
+                            <div class="card">
+                                <div class="card-header card-header-warning">
+                                    <div class="row">
+                                        <div class="col">
+                                            <h4 class="card-title">Speakers dell'episodio</h4>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="card-body table-responsive">
+                                    <button type="button" class="btn btn-danger" onclick="$('#add-speaker').modal('toggle')"><i class="material-icons">add_circle_outline</i> Aggiungi Speaker</button>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col">
+                            <div class="card">
+                                <div class="card-header card-header-warning">
+                                    <div class="row">
+                                        <div class="col">
+                                            <h4 class="card-title">Autori dell'episodio</h4>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="card-body table-responsive">
+                                    <button type="button" class="btn btn-danger"><i class="material-icons">add_circle_outline</i> Aggiungi Autore</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="container-fluid">
+                    <!-- Track episodio -->
+                    <div class="row">
+                        <div class="col">
+                            <div class="card">
+                                <div class="card-header card-header-warning">
+                                    <div class="row">
+                                        <div class="col">
+                                            <h4 class="card-title">File audio dell'episodio</h4>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="card-body table-responsive">
+                                    <input type="file" class="form-control" id="episode-track" name="ep_track" accept="audio/mp3" required>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div>
+                    <button type="submit" class="btn btn-danger"><i class="material-icons">save</i> Salva episodio</button>
+                    <button type="button" class="btn btn-danger" onclick="location.href = './index.php'"><i class="material-icons">undo</i> Annulla</button>
+                </div>
+            </form>
         </div>
-        <div class="container-fluid">
-          <div class="row">
-              <div class="col">
-                <button class="btn btn-danger btn-round">
-                    <i class="material-icons">add_circle_outline</i> Nuova stagione
-                </button>
-              </div>
+
+    <!-- Modals -->
+<!-- Add speaker -->
+<div id="add-speaker" class="modal fade">
+    <div class="modal-dialog modal-confirm">
+      <div class="modal-content">
+        <div class="modal-header justify-content-center">
+          <div class="icon-box">
+            <i class="material-icons">mic</i>
           </div>
-          <div class="row">
-            <div class="col">
-              <div class="card">
-                <div class="card-header card-header-warning">
-                  <div class="row">
-                    <div class="col">
-                      <h4 class="card-title">Lista stagioni</h4>
-                      <p class="card-category">Ultimo aggiornamento: <? echo date("d/m/Y h:i:s");?></p>
-                    </div>
-                  </div>
-                </div>
-                <div class="card-body table-responsive">
-                <table 
-                    data-toggle="table"
-                    data-pagination="true"
-                    data-search="true"
-                    data-show-columns="true"
-                    data-show-refresh="true"
-                    data-show-columns-toggle-all="true"
-                    data-show-pagination-switch="true"
-                    data-show-toggle="true"
-                    data-show-fullscreen="true"
-                    >
-                    <thead>
-                      <tr>
-                        <th data-sortable="true" data-field="id">ID</th>
-                        <th data-sortable="true" data-field="role">Titolo</th>
-                        <th>Azioni</th>
-                      </tr>
-                    </thead>
-                    <tbody>
-                      <tr>
-                        <td>1</td>
-                        <td>Item 1</td>
-                        <td class="td-actions">
-                            <button type="button" rel="tooltip" title="Modifica" class="btn btn-primary btn-link btn-sm">
-                                <i class="material-icons">edit</i>
-                            </button>
-                            <button type="button" rel="tooltip" title="Impostazioni" class="btn btn-primary btn-link btn-sm">
-                                <i class="material-icons">settings</i>
-                            </button>
-                            <button type="button" rel="tooltip" title="Rimuovi" class="btn btn-danger btn-link btn-sm">
-                                <i class="material-icons">delete</i>
-                            </button>
-                        </td>
-                      </tr>
-                    </tbody>
-                  </table>
-                </div>
-              </div>
+          <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+        </div>
+        <div class="modal-body text-center">
+          <h4>Aggiungi Speaker</h4>	
+          <p>Cerca lo speaker tramite il suo <code>username</code></p>
+          <div>
+            <div class="input-group mb-3">
+              <input type="text" class="form-control" placeholder="username" id="search-username" aria-label="username" onkeyup="showSpeakers(this.value)">
             </div>
+            <div id="livesearch-speakers"></div>
           </div>
+          <button class="btn btn-success" data-dismiss="modal"><span>Aggiungi</span></button>
         </div>
       </div>
+    </div>
+  </div> 
       <footer class="footer">
         <div class="container-fluid">
           <nav class="float-left">
@@ -286,6 +312,7 @@ The above copyright notice and this permission notice shall be included in all c
   <!-- Control Center for Material Dashboard: parallax effects, scripts for the example pages etc -->
   <script src="../assets/js/material-dashboard.js?v=2.1.2" type="text/javascript"></script>
   <script src="https://unpkg.com/bootstrap-table@1.18.3/dist/bootstrap-table.min.js"></script>
+  <script src="./livesearch.js"></script>
   <script>
     $(document).ready(function() {
       $().ready(function() {

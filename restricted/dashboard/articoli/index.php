@@ -26,8 +26,7 @@ The above copyright notice and this permission notice shall be included in all c
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/latest/css/font-awesome.min.css">
   <!-- CSS Files -->
   <link href="../assets/css/material-dashboard.css?v=2.1.2" rel="stylesheet" />
-  <!-- CSS Just for demo purpose, don't include it in your project -->
-  <link href="../assets/demo/demo.css" rel="stylesheet" />
+  <link href="../assets/css/modal.css" rel="stylesheet" />
   <link rel="stylesheet" href="https://unpkg.com/bootstrap-table@1.18.3/dist/bootstrap-table.min.css">
 </head>
 
@@ -150,7 +149,7 @@ The above copyright notice and this permission notice shall be included in all c
         <div class="container-fluid">
           <div class="row">
               <div class="col">
-                <button class="btn btn-danger btn-round">
+                <button class="btn btn-danger btn-round" onclick="$('#add-category').modal('toggle')">
                     <i class="material-icons">add_circle_outline</i> Nuova categoria
                 </button>
               </div>
@@ -247,6 +246,36 @@ The above copyright notice and this permission notice shall be included in all c
     </div>
   </div>
 
+  <!-- Modals -->
+  <div id="add-category" class="modal fade" style="width: 100%;">
+    <div class="modal-dialog modal-lg modal-confirm" style="width: 100%;">
+      <div class="modal-content" style="width: 100%;">
+        <div class="modal-header justify-content-center">
+          <div class="icon-box">
+            <i class="material-icons">add_circle_outline</i>
+          </div>
+          <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+        </div>
+        <div class="modal-body text-center">
+          <h4>Nuova categoria</h4>	
+          <div>
+            <div class="input-group input-group-sm mb-3">
+              <span class="input-group-text" id="inputGroup-sizing-sm">Titolo categoria</span>
+              <input type="text" id="cat-title" class="form-control" aria-describedby="inputGroup-sizing-sm" onkeydown="updateCountTitle(this)">
+              <label for="floatingInputValue" id="lbl-count-title">0/255</label>
+            </div>
+            <div class="input-group input-group-sm mb-3">
+              <span class="input-group-text" id="inputGroup-sizing-sm">Descrizione categoria</span>
+              <textarea id="cat-description" rows="4" cols="50" onkeydown="updateCountDescription(this)"></textarea>
+              <label for="floatingInputValue" id="lbl-count-description">0/65535</label>
+            </div>
+          </div>
+          <button class="btn btn-success" data-dismiss="modal">Salva</button>
+        </div>
+      </div>
+    </div>
+  </div>     
+
   <!--   Core JS Files   -->
   <script src="../assets/js/core/jquery.min.js"></script>
   <script src="../assets/js/core/popper.min.js"></script>
@@ -289,6 +318,7 @@ The above copyright notice and this permission notice shall be included in all c
   <!-- Control Center for Material Dashboard: parallax effects, scripts for the example pages etc -->
   <script src="../assets/js/material-dashboard.js?v=2.1.2" type="text/javascript"></script>
   <script src="https://unpkg.com/bootstrap-table@1.18.3/dist/bootstrap-table.min.js"></script>
+  <script src="./updateCount.js"></script>
   <script>
     $(document).ready(function() {
       $().ready(function() {

@@ -18,7 +18,7 @@ The above copyright notice and this permission notice shall be included in all c
   <link rel="icon" type="image/png" href="../assets/img/favicon.png">
   <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
   <title>
-    Lista podcast | A braccetto con la Storia
+    Lista sponsor | A braccetto con la Storia
   </title>
   <meta content='width=device-width, initial-scale=1.0, shrink-to-fit=no' name='viewport' />
   <!--     Fonts and icons     -->
@@ -26,23 +26,35 @@ The above copyright notice and this permission notice shall be included in all c
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/latest/css/font-awesome.min.css">
   <!-- CSS Files -->
   <link href="../assets/css/material-dashboard.css?v=2.1.2" rel="stylesheet" />
-  <!-- CSS Just for demo purpose, don't include it in your project -->
-  <link href="../assets/demo/demo.css" rel="stylesheet" />
+  <link href="../assets/css/modal.css" rel="stylesheet" />
   <link rel="stylesheet" href="https://unpkg.com/bootstrap-table@1.18.3/dist/bootstrap-table.min.css">
 </head>
 
 <body class="">
   <div class="wrapper ">
-    <? 
-      require_once '../templates/templates.php';
-      echo getNavbar('podcast');
-    ?>
+    <div class="sidebar" data-color="danger" data-background-color="white" data-image="../assets/img/sidebar-1.jpg">
+      <!--
+        Tip 1: You can change the color of the sidebar using: data-color="purple | azure | green | orange | danger"
+
+        Tip 2: you can also add an image using data-image tag
+    -->
+      <div class="logo">
+        <a href="http://www.creative-tim.com" class="simple-text logo-normal">
+          A braccetto con la Storia
+        </a>
+        <center><h6 style="color: white;"><span class="badge bg-secondary">beta 1.0</span></h6></center>
+      </div>
+      <? 
+        require_once '../templates/templates.php';
+        echo getNavbar('sponsor');
+      ?>
+    </div>
     <div class="main-panel">
       <!-- Navbar -->
       <nav class="navbar navbar-expand-lg navbar-transparent navbar-absolute fixed-top ">
         <div class="container-fluid">
           <div class="navbar-wrapper">
-            <a class="navbar-brand" href="javascript:;">Lista episodi e stagioni Podcast</a>
+            <a class="navbar-brand" href="javascript:;">Lista sponsor</a>
           </div>
           <div class="collapse navbar-collapse justify-content-end">
             <ul class="navbar-nav">
@@ -83,72 +95,10 @@ The above copyright notice and this permission notice shall be included in all c
       <!-- End Navbar -->
       <div class="content">
         <div class="container-fluid">
-          <div class="row">
-              <div class="col">
-                <button class="btn btn-danger btn-round" onclick="location.href='./nuovo-episodio.php'">
-                    <i class="material-icons">add_circle_outline</i> Nuovo episodio
-                </button>
-              </div>
-          </div>
-          <div class="row">
-            <div class="col">
-              <div class="card">
-                <div class="card-header card-header-warning">
-                  <div class="row">
-                    <div class="col">
-                      <h4 class="card-title">Lista episodi</h4>
-                      <p class="card-category">Ultimo aggiornamento: <? echo date("d/m/Y h:i:s");?></p>
-                    </div>
-                  </div>
-                </div>
-                <div class="card-body table-responsive">
-                <table 
-                    data-toggle="table"
-                    data-pagination="true"
-                    data-search="true"
-                    data-show-columns="true"
-                    data-show-refresh="true"
-                    data-show-columns-toggle-all="true"
-                    data-show-pagination-switch="true"
-                    data-show-toggle="true"
-                    data-show-fullscreen="true"
-                    >
-                    <thead>
-                      <tr>
-                        <th data-sortable="true" data-field="id">ID</th>
-                        <th data-sortable="true" data-field="role">Titolo</th>
-                        <th data-sortable="true" data-field="role">Stagione/i</th>
-                        <th data-sortable="true" data-field="flag">Data</th>
-                        <th>Azioni</th>
-                      </tr>
-                    </thead>
-                    <tbody>
-                      <tr>
-                        <td>1</td>
-                        <td>Item 1</td>
-                        <td>$1</td>
-                        <td>$1</td>
-                        <td class="td-actions">
-                            <button type="button" rel="tooltip" title="Modifica" class="btn btn-primary btn-link btn-sm">
-                                <i class="material-icons">edit</i>
-                            </button>
-                            <button type="button" rel="tooltip" title="Rimuovi" class="btn btn-danger btn-link btn-sm">
-                                <i class="material-icons">delete</i>
-                            </button>
-                        </td>
-                      </tr>
-                    </tbody>
-                  </table>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-        <div class="container-fluid">
-          <div class="row">
+         <div class="row">
               <div class="col">
                 <button class="btn btn-danger btn-round">
-                    <i class="material-icons">add_circle_outline</i> Nuova stagione
+                    <i class="material-icons">add_circle_outline</i> Nuovo sponsor
                 </button>
               </div>
           </div>
@@ -158,13 +108,13 @@ The above copyright notice and this permission notice shall be included in all c
                 <div class="card-header card-header-warning">
                   <div class="row">
                     <div class="col">
-                      <h4 class="card-title">Lista stagioni</h4>
+                      <h4 class="card-title">Lista sponsor</h4>
                       <p class="card-category">Ultimo aggiornamento: <? echo date("d/m/Y h:i:s");?></p>
                     </div>
                   </div>
                 </div>
                 <div class="card-body table-responsive">
-                <table 
+                  <table 
                     data-toggle="table"
                     data-pagination="true"
                     data-search="true"
@@ -178,20 +128,25 @@ The above copyright notice and this permission notice shall be included in all c
                     <thead>
                       <tr>
                         <th data-sortable="true" data-field="id">ID</th>
-                        <th data-sortable="true" data-field="role">Titolo</th>
+                        <th data-sortable="true" data-field="role">Link</th>
+                        <th data-sortable="true" data-field="flag">Tipo</th>
+                        <th data-sortable="true" data-field="points">Commento</th>
+                        <th data-sortable="true" data-field="warns">Data</th>
+                        <th data-sortable="true" data-field="status">Autore</th>
                         <th>Azioni</th>
                       </tr>
                     </thead>
                     <tbody>
                       <tr>
                         <td>1</td>
-                        <td>Item 1</td>
+                        <td>t.me/abraccettoconlastoria</td>
+                        <td>RECIPROCO</td>
+                        <td>No post 20:00-10:00</td>
+                        <td>07/08/2021 20:00</td>
+                        <td>123456789</td>
                         <td class="td-actions">
                             <button type="button" rel="tooltip" title="Modifica" class="btn btn-primary btn-link btn-sm">
                                 <i class="material-icons">edit</i>
-                            </button>
-                            <button type="button" rel="tooltip" title="Impostazioni" class="btn btn-primary btn-link btn-sm">
-                                <i class="material-icons">settings</i>
                             </button>
                             <button type="button" rel="tooltip" title="Rimuovi" class="btn btn-danger btn-link btn-sm">
                                 <i class="material-icons">delete</i>
@@ -243,6 +198,40 @@ The above copyright notice and this permission notice shall be included in all c
       </footer>
     </div>
   </div>
+
+  <!-- Modal -->
+  <div id="nuovo-utente" class="modal fade">
+    <div class="modal-dialog modal-confirm">
+      <div class="modal-content">
+        <div class="modal-header justify-content-center">
+          <div class="icon-box">
+            <i class="material-icons">person_add</i>
+          </div>
+          <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+        </div>
+        <div class="modal-body text-center">
+          <h4>Nuovo utente</h4>	
+          <p>Inserisci i dati relativi al nuovo utente</p>
+          <div>
+            <div class="input-group mb-3">
+              <span class="input-group-text" id="basic-addon1">CHAT ID</span>
+              <input type="text" class="form-control" placeholder="123456789" aria-label="chat_id" aria-describedby="basic-addon1">
+            </div>
+
+            <div class="input-group mb-3">
+              <select class="form-select">
+                <option selected>Ruolo</option>
+                <option value="1">Utente</option>
+                <option value="2">ecc</option>
+                <option value="3">ecc</option>
+              </select>
+            </div>
+          </div>
+          <button class="btn btn-success" data-dismiss="modal"><span>Aggiungi</span></button>
+        </div>
+      </div>
+    </div>
+  </div>     
 
   <!--   Core JS Files   -->
   <script src="../assets/js/core/jquery.min.js"></script>
@@ -464,6 +453,7 @@ The above copyright notice and this permission notice shall be included in all c
 
     });
   </script>
+
 </body>
 
 </html>
