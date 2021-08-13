@@ -26,8 +26,7 @@ The above copyright notice and this permission notice shall be included in all c
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/latest/css/font-awesome.min.css">
   <!-- CSS Files -->
   <link href="../assets/css/material-dashboard.css?v=2.1.2" rel="stylesheet" />
-  <!-- CSS Just for demo purpose, don't include it in your project -->
-  <link href="../assets/demo/demo.css" rel="stylesheet" />
+  <link href="../assets/css/modal.css" rel="stylesheet" />
   <link rel="stylesheet" href="https://unpkg.com/bootstrap-table@1.18.3/dist/bootstrap-table.min.css">
 </head>
 
@@ -147,7 +146,7 @@ The above copyright notice and this permission notice shall be included in all c
         <div class="container-fluid">
           <div class="row">
               <div class="col">
-                <button class="btn btn-danger btn-round">
+                <button class="btn btn-danger btn-round" onclick="$('#nuova-stagione').modal('toggle')">
                     <i class="material-icons">add_circle_outline</i> Nuova stagione
                 </button>
               </div>
@@ -206,6 +205,32 @@ The above copyright notice and this permission notice shall be included in all c
           </div>
         </div>
       </div>
+
+      <!-- Modal -->
+      <!-- Nuova stagione -->
+  <div id="nuova-stagione" class="modal fade">
+    <div class="modal-dialog modal-confirm">
+      <div class="modal-content">
+        <div class="modal-header justify-content-center">
+          <div class="icon-box">
+            <i class="material-icons">book</i>
+          </div>
+          <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+        </div>
+        <div class="modal-body text-center">
+          <h4>Nuova stagione</h4>	
+          <div>
+            <div class="input-group mb-3">
+              <input type="text" id="season-title" class="form-control" aria-label="season" aria-describedby="basic-addon1">
+              <label for="season-title">Titolo della stagione</label>
+            </div>
+          </div>
+          <button class="btn btn-success" data-dismiss="modal"><span>Aggiungi</span></button>
+        </div>
+      </div>
+    </div>
+  </div>  
+
       <footer class="footer">
         <div class="container-fluid">
           <nav class="float-left">

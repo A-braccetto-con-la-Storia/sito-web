@@ -141,13 +141,13 @@
 
         if ($active == 'cpanel') 
             $cpanel='<li class="nav-item active">
-            <a class="nav-link" href="./rtl.html">
+            <a class="nav-link" href="./cpanel/index.php">
               <i class="material-icons">settings</i>
               <p>Pannello di controllo</p>
             </a>
           </li>';
         else $cpanel = '<li class="nav-item ">
-            <a class="nav-link" href="./rtl.html">
+            <a class="nav-link" href="./cpanel/index.php">
             <i class="material-icons">settings</i>
             <p>Pannello di controllo</p>
             </a>

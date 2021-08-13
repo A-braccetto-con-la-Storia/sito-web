@@ -97,7 +97,7 @@ The above copyright notice and this permission notice shall be included in all c
         <div class="container-fluid">
          <div class="row">
               <div class="col">
-                <button class="btn btn-danger btn-round">
+                <button class="btn btn-danger btn-round" onclick="location.href='./nuovo-sponsor.php'">
                     <i class="material-icons">add_circle_outline</i> Nuovo sponsor
                 </button>
               </div>
