@@ -30,7 +30,7 @@ The above copyright notice and this permission notice shall be included in all c
   <link rel="stylesheet" href="https://unpkg.com/bootstrap-table@1.18.3/dist/bootstrap-table.min.css">
 </head>
 
-<body class="">
+<body class="" onload="getArticles()">
   <div class="wrapper ">
     <? 
       require_once '../templates/templates.php';
@@ -84,7 +84,7 @@ The above copyright notice and this permission notice shall be included in all c
         <div class="container-fluid">
           <div class="row">
               <div class="col">
-                <button class="btn btn-danger btn-round">
+                <button class="btn btn-danger btn-round" onclick="location.href='./editor/ckeditor/index.php'">
                     <i class="material-icons">add_circle_outline</i> Nuovo articolo
                 </button>
               </div>
@@ -121,24 +121,8 @@ The above copyright notice and this permission notice shall be included in all c
                         <th>Azioni</th>
                       </tr>
                     </thead>
-                    <tbody>
-                      <tr>
-                        <td>1</td>
-                        <td>Item 1</td>
-                        <td>$1</td>
-                        <td>$1</td>
-                        <td class="td-actions">
-                            <button type="button" rel="tooltip" title="Modifica" class="btn btn-primary btn-link btn-sm">
-                                <i class="material-icons">edit</i>
-                            </button>
-                            <button type="button" rel="tooltip" title="Impostazioni" class="btn btn-primary btn-link btn-sm">
-                                <i class="material-icons">settings</i>
-                            </button>
-                            <button type="button" rel="tooltip" title="Rimuovi" class="btn btn-danger btn-link btn-sm">
-                                <i class="material-icons">delete</i>
-                            </button>
-                        </td>
-                      </tr>
+                    <tbody id="articles-list">
+                      
                     </tbody>
                   </table>
                 </div>
@@ -176,7 +160,7 @@ The above copyright notice and this permission notice shall be included in all c
                     data-show-pagination-switch="true"
                     data-show-toggle="true"
                     data-show-fullscreen="true"
-                    >
+                  >
                     <thead>
                       <tr>
                         <th data-sortable="true" data-field="id">ID</th>
@@ -319,6 +303,7 @@ The above copyright notice and this permission notice shall be included in all c
   <script src="../assets/js/material-dashboard.js?v=2.1.2" type="text/javascript"></script>
   <script src="https://unpkg.com/bootstrap-table@1.18.3/dist/bootstrap-table.min.js"></script>
   <script src="./updateCount.js"></script>
+  <script src="./getArticles.js"></script>
   <script>
     $(document).ready(function() {
       $().ready(function() {

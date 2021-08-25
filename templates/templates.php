@@ -9,6 +9,6 @@
     //footer
     $footer = file_get_contents($path."footer.html");
     //navbar
-    $navbar = file_get_contents($path."navbar.html");
+    require_once $path.'navbar.php';
 
 ?>

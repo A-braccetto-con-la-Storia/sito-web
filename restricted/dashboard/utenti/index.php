@@ -27,17 +27,20 @@ The above copyright notice and this permission notice shall be included in all c
   <!-- CSS Files -->
   <link href="../assets/css/material-dashboard.css?v=2.1.2" rel="stylesheet" />
   <link href="../assets/css/modal.css" rel="stylesheet" />
-  <link rel="stylesheet" href="https://unpkg.com/bootstrap-table@1.18.3/dist/bootstrap-table.min.css">
+  <link href="../assets/css/radio-sanzione.css" rel="stylesheet" />
+
+  <!-- Moment js -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.29.1/moment.min.js" referrerpolicy="no-referrer"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/moment-timezone/0.5.33/moment-timezone.min.js" referrerpolicy="no-referrer"></script>
+
+  <!-- Tabulator -->
+  <link href="https://unpkg.com/tabulator-tables@4.9.3/dist/css/tabulator.min.css" rel="stylesheet">
+  <script type="text/javascript" src="https://unpkg.com/tabulator-tables@4.9.3/dist/js/tabulator.min.js"></script>
 </head>
 
-<body class="">
+<body class="" >
   <div class="wrapper ">
     <div class="sidebar" data-color="danger" data-background-color="white" data-image="../assets/img/sidebar-1.jpg">
-      <!--
-        Tip 1: You can change the color of the sidebar using: data-color="purple | azure | green | orange | danger"
-
-        Tip 2: you can also add an image using data-image tag
-    -->
       <div class="logo">
         <a href="http://www.creative-tim.com" class="simple-text logo-normal">
           A braccetto con la Storia
@@ -95,13 +98,7 @@ The above copyright notice and this permission notice shall be included in all c
       <!-- End Navbar -->
       <div class="content">
         <div class="container-fluid">
-         <div class="row">
-              <div class="col">
-                <button class="btn btn-danger btn-round" onclick="location.href = './nuovo-utente.php'">
-                    <i class="material-icons">add_circle_outline</i> Nuovo utente
-                </button>
-              </div>
-          </div>
+         
           <div class="row">
             <div class="col">
               <div class="card">
@@ -109,60 +106,21 @@ The above copyright notice and this permission notice shall be included in all c
                   <div class="row">
                     <div class="col">
                       <h4 class="card-title">Lista utenti</h4>
-                      <p class="card-category">Ultimo aggiornamento: <? echo date("d/m/Y h:i:s");?></p>
+                      <p class="card-category">
+                        Ultimo aggiornamento: <? echo date("d/m/Y h:i:s");?><br>
+                        Premi su una riga per vedere le opzioni disponibili
+                      </p>
                     </div>
                   </div>
                 </div>
                 <div class="card-body table-responsive">
-                  <table 
-                    data-toggle="table"
-                    data-pagination="true"
-                    data-search="true"
-                    data-show-columns="true"
-                    data-show-refresh="true"
-                    data-show-columns-toggle-all="true"
-                    data-show-pagination-switch="true"
-                    data-show-toggle="true"
-                    data-show-fullscreen="true"
-                    >
-                    <thead>
-                      <tr>
-                        <th data-sortable="true" data-field="id">ID</th>
-                        <th data-sortable="true" data-field="username">Username</th>
-                        <th data-sortable="true" data-field="role">Ruolo</th>
-                        <th data-sortable="true" data-field="flag">Flag</th>
-                        <th data-sortable="true" data-field="points">Punti</th>
-                        <th data-sortable="true" data-field="warns">Warns</th>
-                        <th data-sortable="true" data-field="status">Status</th>
-                        <th>Azioni</th>
-                      </tr>
-                    </thead>
-                    <tbody>
-                      <tr>
-                        <td>134723339</td>
-                        <td>MrDeiv</td>
-                        <td>Fondatore</td>
-                        <td>0</td>
-                        <td>0</td>
-                        <td>0/3</td>
-                        <td>ATTIVO</td>
-                        <td class="td-actions">
-                            <button type="button" rel="tooltip" title="Modifica" class="btn btn-primary btn-link btn-sm">
-                                <i class="material-icons">edit</i>
-                            </button>
-                            <button type="button" rel="tooltip" title="Visualizza" class="btn btn-danger btn-link btn-sm">
-                                <i class="material-icons">info</i>
-                            </button>
-                            <button type="button" rel="tooltip" title="Sanziona" class="btn btn-primary btn-link btn-sm">
-                                <i class="material-icons">report_problem</i>
-                            </button>
-                            <button type="button" rel="tooltip" title="Rimuovi" class="btn btn-danger btn-link btn-sm">
-                                <i class="material-icons">delete</i>
-                            </button>
-                        </td>
-                      </tr>
-                    </tbody>
-                  </table>
+                  <!-- Tabella utenti -->
+                  <div style="margin-bottom: 1%">
+                    <button class="btn btn-danger btn-round" id="download-csv"><i class="material-icons">table_rows</i> Download CSV</button>
+                    <button class="btn btn-danger btn-round" id="download-json"><i class="material-icons">code</i> Download JSON</button>
+                    <button class="btn btn-danger btn-round" id="download-pdf"><i class="material-icons">picture_as_pdf</i> Download PDF</button>
+                  </div>
+                  <div id="users-table"></div>
                 </div>
               </div>
             </div>
@@ -208,6 +166,7 @@ The above copyright notice and this permission notice shall be included in all c
   </div>
 
   <!-- Modal -->
+  <!-- Nuovo utente -->
   <div id="nuovo-utente" class="modal fade">
     <div class="modal-dialog modal-confirm">
       <div class="modal-content">
@@ -241,8 +200,153 @@ The above copyright notice and this permission notice shall be included in all c
     </div>
   </div>     
 
-  <!--   Core JS Files   -->
+  <!-- Modifica utente -->
+  <div id="edit-utente" class="modal fade">
+    <div class="modal-dialog modal-confirm">
+      <div class="modal-content">
+        <div class="modal-header justify-content-center">
+          <div class="icon-box">
+            <i class="material-icons">edit</i>
+          </div>
+          <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+        </div>
+        <div class="modal-body text-center">
+          <h4>Modifica utente</h4>
+          <div>
+            <div class="input-group mb-3">
+              <span class="input-group-text" id="basic-addon1">ID</span>
+              <input type="text" class="form-control" id="edit-id">
+            </div>
+            <div class="input-group mb-3">
+              <span class="input-group-text" id="basic-addon1">@</span>
+              <input type="text" class="form-control" id="edit-username">
+            </div>
+          </div>
+          <button class="btn btn-success" data-dismiss="modal"><span>Modifica</span></button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Sanziona utente -->
+  <div id="sanctions-utente" class="modal fade">
+    <div class="modal-dialog modal-confirm">
+      <div class="modal-content">
+        <div class="modal-header justify-content-center">
+          <div class="icon-box">
+            <i class="material-icons">report</i>
+          </div>
+          <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+        </div>
+        <div class="modal-body text-center">
+          <h4>Sanziona utente</h4>
+          <div>
+            <div>
+              <input type="radio" id="radio-warn" name="sanzione" value="warn" data-icon='⚠️' title="Warn" onclick="sanziona()"/>
+              <input type="radio" id="radio-ban" name="sanzione" value="ban" data-icon='⛔' title="Ban" onclick="sanziona()"/>
+            </div>
+            <div class="input-group">
+              <span class="input-group-text">Motivazione</span>
+              <textarea class="form-control" aria-label="description" id="motivazione" onkeyup="sanziona()"></textarea>
+            </div>
+          </div>
+          <button class="btn btn-danger" data-dismiss="modal"><span>Annulla</span></button>
+          <button id="sanziona-btn" class="btn btn-danger" disabled><span>Sanziona</span></button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Users table -->
   <script src="../assets/js/core/jquery.min.js"></script>
+  <script src="./userEventHandler.js"></script>
+  <script src="../../tools/sessionHadler.js"></script>
+  <script>
+    moment().format();
+
+    //define data array
+    var tabledata = [
+        {id:134723339, username:"MrDeiv", role: "Fondatore", flag: 0, points: 0, warns: "0", status: "attivo", last_access: "20/08/2021 10:00:00"}
+    ];
+
+    //initialize table
+    var table = new Tabulator("#users-table", {
+        data:tabledata,           //load row data from array
+        layout:"fitColumns",      //fit columns to width of table
+        responsiveLayout:"hide",  //hide columns that dont fit on the table
+        tooltips:true,            //show tool tips on cells
+        addRowPos:"top",          //when adding a new row, add it to the top of the table
+        history:true,             //allow undo and redo actions on the table
+        pagination:"local",       //paginate the data
+        paginationSize:7,         //allow 7 rows per page of data
+        movableColumns:true,      //allow column order to be changed
+        resizableRows:true,       //allow row order to be changed
+        initialSort:[             //set the initial sort order of the data
+            {column:"name", dir:"asc"},
+        ],
+        columns:[
+          {title:"ID", field:"id", sorter:"number"},
+          {title:"Username", field:"username", sorter:"string"},
+          {title:"Ruolo", field:"role", sorter:"string"},
+          {title:"Flag", field:"flag", sorter:"number"},
+          {title:"Punti", field:"points", sorter:"number"},
+          {title:"Warns", field:"warns", sorter:"number"},
+          {title:"Status", field:"status", sorter:"string"},
+          {title:"Ultimo accesso", field:"last_access", sorter:"datetime", formatter:"datetime", /* formatterParams:{
+              inputFormat:"DD/MM/YYYY HH:mm:ss",
+              outputFormat:"DD/MM/YYYY HH:mm:ss",
+              invalidPlaceholder:"(Data non valida)",
+              timezone:"Europe/Rome",
+          } */}
+        ],
+        rowClickMenu:[
+          {
+              label:"🔎 Dettagli utente",
+              action:function(e, row){
+                  openEditModal(row);
+              }
+          },
+          {
+              label:"📝 Modifica utente",
+              action:function(e, row){
+                  openEditModal(row);
+              }
+          },
+          {
+              label:"🗑️ Elimina utente",
+              action:function(e, row){
+                  row.delete();
+              }
+          },
+          {
+              label:"⚠️ Sanziona utente",
+              action:function(e, row){
+                sanctionsUser(row);
+              }
+          },
+      ]
+    });
+
+    //trigger download of data.csv file
+    document.getElementById("download-csv").addEventListener("click", function(){
+        table.download("csv", "users.csv");
+    });
+
+    //trigger download of data.json file
+    document.getElementById("download-json").addEventListener("click", function(){
+        table.download("json", "users.json");
+    });
+
+    //trigger download of data.pdf file
+    document.getElementById("download-pdf").addEventListener("click", function(){
+        table.download("pdf", "users.pdf", {
+            orientation:"portrait", //set page orientation to portrait
+            title:"Lista utenti", //add title to report
+        });
+    });
+  </script>
+
+  <!--   Core JS Files   -->
   <script src="../assets/js/core/popper.min.js"></script>
   <script src="../assets/js/core/bootstrap-material-design.min.js"></script>
   <script src="../assets/js/plugins/perfect-scrollbar.jquery.min.js"></script>

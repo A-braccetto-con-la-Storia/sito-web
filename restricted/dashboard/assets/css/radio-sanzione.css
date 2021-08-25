@@ -1,0 +1,22 @@
+input[name='sanzione'] {
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    -o-appearance: none;
+    appearance: none;
+    outline: none;
+  }
+  input[name='sanzione']:after {
+    font-family: 'FontAwesome';
+    display: inline-block;
+    text-align: center;
+    font-size: 80px;
+    content: attr(data-icon);
+    padding: 50px 50px;
+    border-radius: 15px;
+    color: rgba(0, 0, 0, 0.4);
+    transition: box-shadow 0.5s, color 0.5s;
+  }
+  input[name='sanzione']:checked:after {
+    box-shadow: 2px 2px 14px rgba(0, 0, 0, 0.4);
+    color: rgba(255, 255, 255, 0.6);
+  }
