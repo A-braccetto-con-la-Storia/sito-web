@@ -18,7 +18,7 @@ The above copyright notice and this permission notice shall be included in all c
   <link rel="icon" type="image/png" href="../assets/img/favicon.png">
   <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
   <title>
-    Lista utenti | A braccetto con la Storia
+    Dettagli utente | A braccetto con la Storia
   </title>
   <meta content='width=device-width, initial-scale=1.0, shrink-to-fit=no' name='viewport' />
   <!--     Fonts and icons     -->
@@ -38,132 +38,14 @@ The above copyright notice and this permission notice shall be included in all c
   <script type="text/javascript" src="https://unpkg.com/tabulator-tables@4.9.3/dist/js/tabulator.min.js"></script>
 </head>
 
-<body class="" >
+<body class="" style="margin: 1%">
   <div class="wrapper ">
-    <div class="sidebar" data-color="danger" data-background-color="white" data-image="../assets/img/sidebar-1.jpg">
-      <div class="logo">
-        <a href="http://www.creative-tim.com" class="simple-text logo-normal">
-          A braccetto con la Storia
-        </a>
-        <center><h6 style="color: white;"><span class="badge bg-secondary">beta 1.0</span></h6></center>
-      </div>
-      <? 
-        require_once '../templates/templates.php';
-        echo getNavbar('utenti');
-      ?>
-    </div>
-    <div class="main-panel">
-      <!-- Navbar -->
-      <nav class="navbar navbar-expand-lg navbar-transparent navbar-absolute fixed-top ">
-        <div class="container-fluid">
-          <div class="navbar-wrapper">
-            <a class="navbar-brand" href="javascript:;">Lista utenti</a>
-          </div>
-          <div class="collapse navbar-collapse justify-content-end">
-            <ul class="navbar-nav">
-              <li class="nav-item dropdown">
-                <a class="nav-link" href="http://example.com" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                  <i class="material-icons">notifications</i>
-                  <span class="notification">5</span>
-                  <p class="d-lg-none d-md-block">
-                    Some Actions
-                  </p>
-                </a>
-                <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdownMenuLink">
-                  <a class="dropdown-item" href="#">Mike John responded to your email</a>
-                  <a class="dropdown-item" href="#">You have 5 new tasks</a>
-                  <a class="dropdown-item" href="#">You're now friend with Andrew</a>
-                  <a class="dropdown-item" href="#">Another Notification</a>
-                  <a class="dropdown-item" href="#">Another One</a>
-                </div>
-              </li>
-              <li class="nav-item dropdown">
-                <a class="nav-link" href="javascript:;" id="navbarDropdownProfile" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                  <i class="material-icons">person</i>
-                  <p class="d-lg-none d-md-block">
-                    Account
-                  </p>
-                </a>
-                <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdownProfile">
-                  <a class="dropdown-item" href="#">Profilo</a>
-                  <a class="dropdown-item" href="#">Impostazioni</a>
-                  <div class="dropdown-divider"></div>
-                  <a class="dropdown-item" href="#">Log out</a>
-                </div>
-              </li>
-            </ul>
-          </div>
-        </div>
-      </nav>
-      <!-- End Navbar -->
-      <div class="content">
-        <div class="container-fluid">
-         
-          <div class="row">
-            <div class="col">
-              <div class="card">
-                <div class="card-header card-header-warning">
-                  <div class="row">
-                    <div class="col">
-                      <h4 class="card-title">Lista utenti</h4>
-                      <p class="card-category">
-                        Ultimo aggiornamento: <? echo date("d/m/Y h:i:s");?><br>
-                        Premi su una riga per vedere le opzioni disponibili
-                      </p>
-                    </div>
-                  </div>
-                </div>
-                <div class="card-body table-responsive">
-                  <!-- Tabella utenti -->
-                  <div style="margin-bottom: 1%">
-                    <button class="btn btn-danger btn-round" id="download-csv"><i class="material-icons">table_rows</i> Download CSV</button>
-                    <button class="btn btn-danger btn-round" id="download-json"><i class="material-icons">code</i> Download JSON</button>
-                    <button class="btn btn-danger btn-round" id="download-pdf"><i class="material-icons">picture_as_pdf</i> Download PDF</button>
-                    <button class="btn btn-danger btn-round" id="reload"><i class="material-icons">refresh</i> Ricarica</button>
-                  </div>
-                  <div id="users-table"></div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-      <footer class="footer">
-        <div class="container-fluid">
-          <nav class="float-left">
-            <ul>
-              <li>
-                <a href="https://www.creative-tim.com">
-                  Creative Tim
-                </a>
-              </li>
-              <li>
-                <a href="https://creative-tim.com/presentation">
-                  About Us
-                </a>
-              </li>
-              <li>
-                <a href="http://blog.creative-tim.com">
-                  Blog
-                </a>
-              </li>
-              <li>
-                <a href="https://www.creative-tim.com/license">
-                  Licenses
-                </a>
-              </li>
-            </ul>
-          </nav>
-          <div class="copyright float-right">
-            &copy;
-            <script>
-              document.write(new Date().getFullYear())
-            </script>, made with <i class="material-icons">favorite</i> by
-            <a href="https://www.creative-tim.com" target="_blank">Creative Tim</a> for a better web.
-          </div>
-        </div>
-      </footer>
-    </div>
+    <section id="pic">
+        <nav>
+            <img src="../assets/img/faces/avatar.jpg" width="200" height="200" class="img-thumbnail" alt="...">
+            <h2>Username</h2>
+        </nav>
+    </section>
   </div>
 
   <!-- Modal -->
